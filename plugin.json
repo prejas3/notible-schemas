@@ -1,0 +1,20 @@
+{
+  "id": "notible.schemas",
+  "name": "Schemas",
+  "version": "0.2.0",
+  "apiVersion": "1.25",
+  "minCoreVersion": "0.95.1",
+  "author": "Notible",
+  "description": "Saved recipes for kinds of items: a title pattern with dates and a running number, default properties and tags. Build one once and attach it to any number of projects, each with its own counter.",
+  "entry": "main.js",
+  "permissions": [
+    "data.read",
+    "data.write",
+    "workspace.ui"
+  ],
+  "sync": "data",
+  "locales": {
+    "pl": "locales/pl.json"
+  },
+  "guide": "A **schema** fills in new items of one kind for you: a title pattern, properties and tags.\n\n## Build one\n\nOpen **Schemas** in the sidebar. Your schemas are on the left; click one to edit it, or **New schema**. Pick the kind of item (task, note, …) and a title pattern:\n\n- `{yyyy}`, `{mm}`, `{dd}`: today's date\n- `{counter:3}`: a running number, padded to 3 digits (**Number width** changes the padding)\n\nFor example `FV/{counter:3}/{mm}/{yyyy}` gives `FV/001/10/2026`. The counter can restart every year or every month. Add default properties (`status = doing`) and tags. The preview shows the next title.\n\n## Attach it to projects\n\nOpen a project (or a folder or space) and its **Schemas** tab. **Attach schema** links an existing schema to it; **New schema** builds one and attaches it when you save; **Detach** unlinks it. Build a schema once and attach it to as many projects as you like: each project counts on its own, so an Invoice schema attached to two projects gives `FV/001`, `FV/002`… in each of them.\n\nA schema that isn't attached anywhere applies everywhere, with one counter of its own. Inside a project, a schema attached there wins over one that applies everywhere.\n\n## Use it\n\n- **+ → your schema's name** creates an item already filled in. Inside a project it uses that project's counter.\n- A new item of that kind that still has its default title (\"New task\") is filled in too.\n\n## Numbers\n\nThe next number is the highest one already used + 1. Two computers working offline can give out the same number; after they sync, Notible tells you so you can rename one. Numbers can have gaps: a deleted item's number is not given out again. Detaching and attaching again continues the numbering. Don't rely on this for legally gapless invoice series."
+}
